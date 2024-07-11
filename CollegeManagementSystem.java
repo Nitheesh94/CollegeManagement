@@ -85,9 +85,9 @@ public class CollegeManagement {
         int facultyCount = 0;
 
         while (true) {
-            System.out.println("***********************************");
+            System.out.println("-----------------------------------");
             System.out.println("College Management System");
-            System.out.println("***********************************");
+            System.out.println("-----------------------------------");
             System.out.println("1. Add Student");
             System.out.println("2. Add Course");
             System.out.println("3. Add Faculty");
@@ -137,7 +137,7 @@ public class CollegeManagement {
                     System.out.println("Faculty added successfully!");
                     break;
                 case 4:
-                    System.out.println("***********************************");
+                    System.out.println("-----------------------------------");
                     System.out.println("List of Students:");
                     for (int i = 0; i < studentCount; i++) {
                         System.out.println("Student " + (i + 1) + ":");
@@ -146,7 +146,7 @@ public class CollegeManagement {
                     }
                     break;
                 case 5:
-                    System.out.println("***********************************");
+                    System.out.println("-----------------------------------");
                     System.out.println("List of Courses:");
                     for (int i = 0; i < courseCount; i++) {
                         System.out.println("Course " + (i + 1) + ":");
@@ -156,7 +156,7 @@ public class CollegeManagement {
                     }
                     break;
                 case 6:
-                    System.out.println("***********************************");
+                    System.out.println("-----------------------------------");
                     System.out.println("List of Faculties:");
                     for (int i = 0; i < facultyCount; i++) {
                         System.out.println("Faculty " + (i + 1) + ":");
@@ -246,7 +246,7 @@ public class CollegeManagement {
                 default:
                     System.out.println("Invalid choice!");
             }
-            System.out.println("***********************************");
+            System.out.println("-----------------------------------");
         }
     }
 }
