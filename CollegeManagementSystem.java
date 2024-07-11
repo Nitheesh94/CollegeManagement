@@ -1,4 +1,5 @@
 import java.util.*;
+
 class Student {
     String name;
     int id;
@@ -40,6 +41,7 @@ class Student {
         System.out.println("Contact: " + contact);
     }
 }
+
 class Course {
     String name;
     int courseId;
@@ -57,6 +59,7 @@ class Course {
         return courseId;
     }
 }
+
 class Faculty {
     String name;
     int facultyId;
@@ -74,6 +77,7 @@ class Faculty {
         return facultyId;
     }
 }
+
 public class CollegeManagement {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -105,8 +109,16 @@ public class CollegeManagement {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter student name: ");
-                    String studentName = sc.nextLine();
+                    String studentName;
+                    while (true) {
+                        System.out.print("Enter student name: ");
+                        studentName = sc.nextLine();
+                        if (!isInteger(studentName)) {
+                            break;
+                        } else {
+                            System.out.println("Invalid input. Please enter a valid name.");
+                        }
+                    }
                     System.out.print("Enter student ID: ");
                     int studentId = sc.nextInt();
                     sc.nextLine();
@@ -117,8 +129,16 @@ public class CollegeManagement {
                     System.out.println("Student added successfully!");
                     break;
                 case 2:
-                    System.out.print("Enter course name: ");
-                    String courseName = sc.nextLine();
+                    String courseName;
+                    while (true) {
+                        System.out.print("Enter course name: ");
+                        courseName = sc.nextLine();
+                        if (!isInteger(courseName)) {
+                            break;
+                        } else {
+                            System.out.println("Invalid input. Please enter a valid course name.");
+                        }
+                    }
                     System.out.print("Enter course ID: ");
                     int courseId = sc.nextInt();
                     sc.nextLine();
@@ -127,8 +147,16 @@ public class CollegeManagement {
                     System.out.println("Course added successfully!");
                     break;
                 case 3:
-                    System.out.print("Enter faculty name: ");
-                    String facultyName = sc.nextLine();
+                    String facultyName;
+                    while (true) {
+                        System.out.print("Enter faculty name: ");
+                        facultyName = sc.nextLine();
+                        if (!isInteger(facultyName)) {
+                            break;
+                        } else {
+                            System.out.println("Invalid input. Please enter a valid faculty name.");
+                        }
+                    }
                     System.out.print("Enter faculty ID: ");
                     int facultyId = sc.nextInt();
                     sc.nextLine();
@@ -248,5 +276,17 @@ public class CollegeManagement {
             }
             System.out.println("-----------------------------------");
         }
+    }
+
+    private static boolean isInteger(String str) {
+        if (str == null) {
+            return false;
+        }
+        try {
+            Integer.parseInt(str);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
     }
 }
